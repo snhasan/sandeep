@@ -1,0 +1,91 @@
+{% load static %}
+
+<style type="text/css">
+
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; 
+}
+
+
+header {
+    background-color: rgba(18,72,120, 0.8);
+    color: #fff;
+    padding: 0 1rem;
+    position: absolute;
+    left: 2rem;
+}
+
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    z-index: 99;
+    background: rgba(0,0,0,0.4);
+    margin-top: 2px;
+
+}
+
+
+</style>
+<nav>
+<div class="header" id="myHeader">
+	<div class="container">
+
+		<div class="row">
+			
+			<div class="col-md-12 col-sm-12 col-xs-12 content-inner">
+				<div class="logo">
+					<a href="{% url 'home' %}"><img src="{{ profile.image.url }}" alt=""></a>
+				</div>
+				
+					<div class="main_menu">
+						<a id="setting"><i class="fa fa-bars fa-2x"></i></a>
+						<ul class="menu green">
+							<li style="margin-bottom: 30px; border-bottom: none;"><a id="close"><i class="fa fa-times" aria-hidden="true"></i></a></li>
+							<li>
+								<a href="{% url 'home' %}">Home</a>
+								
+							</li>
+							<li>
+								<a href="{% url 'about' %}">About</a>
+							</li>
+							<li>
+								<a href="{% url 'activities' %}">Activities</a>
+							</li>
+							<li>
+								<a href="{% url 'gallery' %}">Gallery</a>
+							</li>
+							<li>
+								<a href="{% url 'programs' %}">Programs</a>
+							</li>
+							<li>
+								<a href="{% url 'contact' %}">Contact</a>
+							</li>
+						</ul>
+					</div>
+				
+			</div>
+
+		</div>
+	</div>
+</div>
+
+		</nav>
+<script type="text/javascript">
+
+$(window).scroll(function(){
+    if ($(window).scrollTop() >= 300) {
+        $('nav').addClass('fixed-header');
+        $('nav div').addClass('visible-title');
+    }
+    else {
+        $('nav').removeClass('fixed-header');
+        $('nav div').removeClass('visible-title');
+    }
+});
+
+</script>

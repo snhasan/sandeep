@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<body class="page_about pages_item">
+<div class="bg_full_cp">
+	<div class="bg_full" style="background-image: url('../static/images/img/gr1.jpg'); background-repeat: no-repeat; background-position: center;">
+		<div class="container">
+			<div class="ct">
+				<h2 class="page_title">
+					<span>Contact</span>
+				</h2>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="who-about">
+	<div class="careers">
+		<div class="container">
+			
+			<div class="title">
+				<h3 style="text-align: center; padding-bottom: 15px" ><b>Contact Us</b></h3>
+			</div>
+			<div class="row">
+				<div class="content-main">
+						<form id="" action="{% url 'contact_form_view' %}" method="POST" class="custom-form-style-1">{% csrf_token %}
+											{{ form.as_p }}
+							<div class="form-register-name">
+								<div class="description">
+									<span>Please contact only if you are from Sanddep</span>
+								</div>
+								<div class="first_name">
+									<input class="form-control" type="text" name="name" placeholder="Name" maxlength="100" required>
+								</div>
+								<div class="last_name">
+									<input type="email" value="" data-msg-required="Please enter your email address." data-msg-email="Please enter a valid email address." maxlength="100" class="form-control" name="email" id="email" placeholder="Your E-mail" required>
+								</div>
+
+								
+							</div>
+							<div class="form-register-pass">
+								<div>
+									<textarea maxlength="5000" data-msg-required="Please enter your comment." rows="10" class="form-control" name="message" id="message" placeholder="Your message" required></textarea>
+								</div>
+							</div>
+							<div class="form-item-submit">
+								<input type="submit" name="submit" value="Send">
+							</div>
+						</form>
+					</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
